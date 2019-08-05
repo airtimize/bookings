@@ -18,7 +18,7 @@ let getListing = function(){
     let min = 1;
     let max = 9999999;
     var rand = Math.floor(Math.random() * (max - min)) + min;
-    let listingRes = http.get(`http://localhost:3001/rooms/${rand}/`, {}, {
+    let listingRes = http.get(`18.191.15.40/rooms/${rand}/`, {}, {
 
   });
 
@@ -29,7 +29,7 @@ let getListing = function(){
 };
 
 let createListing = function(){
-    let listingRes = http.post(`http://localhost:3001/api/booking/`, {}, {
+    let listingRes = http.post(`18.191.15.40/api/booking/`, {}, {
 
   });
 
