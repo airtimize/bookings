@@ -51,7 +51,9 @@ app.get('/api/:listingid/booking', async (req, res) => {
 });
 
 app.post('/api/booking', async (req, res) => {
-
+  const createListing = await models.createListingInfo();
+  // console.log(createListing);
+  res.send('POSTED');
 });
 
 app.put('/api/:listingid/booking', async(req, res) => {
