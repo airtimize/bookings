@@ -8,7 +8,6 @@ const pool = new Pool({
   database: 'reservations',
   // password: 'password',
   port: 5432,
-  ssl : true
 })
 
 pool.connect((err, client, release) => {
