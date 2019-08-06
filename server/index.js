@@ -6,7 +6,7 @@ const models = require('./models');
 const rel = require('newrelic');
 // console.log(rel)
 const app = express();
-const port = 80;
+const port = 3001;
 
 app.use(morgan('dev'));
 app.use('/rooms/:listingid', express.static(path.resolve('client')));
