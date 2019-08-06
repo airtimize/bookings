@@ -12,7 +12,7 @@ app.use(morgan('dev'));
 app.use('/rooms/:listingid', express.static(path.resolve('client')));
 app.use(express.json());
 
-app.get('/api/:listingid/booking', async (req, res) => {
+app.get('/api/:listingid/booking', async(req, res) => {
   const listingInfo = await models.getListingInfo(req.params.listingid);
   const bookedDates = await models.getBookedDates(req.params.listingid);
   //console.log(bookedDates);
