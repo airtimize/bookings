@@ -1,9 +1,12 @@
 // String url = "brandonyu@postgresql://localhost:5433/reservations";
 const Pool = require('pg').Pool
 const pool = new Pool({
-  user: 'brandonyu',
-  host: 'localhost',
+  // user: 'brandonyu',
+  // host : 'localhost',
+  host: '18.191.15.40',
   database: 'reservations',
+  user : 'postgres',
+  password : 'brandon',
   // password: 'password',
   port: 5432,
 })

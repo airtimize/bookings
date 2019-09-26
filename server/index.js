@@ -1,10 +1,13 @@
+require('newrelic');
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const db = require('./db');
 const models = require('./models');
-const rel = require('newrelic');
 // console.log(rel)
+const redis = require('redis');
+const client = redis.createClient();
+
 const app = express();
 const port = 3001;
 
@@ -12,7 +15,22 @@ app.use(morgan('dev'));
 app.use('/rooms/:listingid', express.static(path.resolve('client')));
 app.use(express.json());
 
-app.get('/api/:listingid/booking', async (req, res) => {
+function cache(req, res, next) {
+  const org = req.query.org;
+  client.get(org, function (err, data) {
+      console.log(data);
+      if (err) throw err;
+
+      if (data != null) {
+          res.send(respond(org, data));
+      } else {
+          next();
+      }
+  });
+}
+
+app.get('/api/:listingid/booking', cache, async(req, res) => {
+  
   const listingInfo = await models.getListingInfo(req.params.listingid);
   const bookedDates = await models.getBookedDates(req.params.listingid);
   //console.log(bookedDates);
@@ -51,7 +69,9 @@ app.get('/api/:listingid/booking', async (req, res) => {
 });
 
 app.post('/api/booking', async (req, res) => {
-
+  const createListing = await models.createListingInfo();
+  // console.log(createListing);
+  res.send('POSTED');
 });
 
 app.put('/api/:listingid/booking', async(req, res) => {

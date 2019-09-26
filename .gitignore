@@ -17,3 +17,9 @@ bookings.csv.gz
 oldseed.js
 newrelic.js
 newrelic_agent.LOG
+bookings3.csv
+bookings3.csv.gz
+listings3.csv
+listings3.csv.gz
+users3.csv
+users3.csv.gz

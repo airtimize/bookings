@@ -1,9 +1,9 @@
 const faker = require('faker');
 const fs = require('fs');
 
-const listingStream = fs.createWriteStream('./listings.csv');
-const bookingStream = fs.createWriteStream('./bookings.csv');
-const userStream = fs.createWriteStream('./users.csv');
+const listingStream = fs.createWriteStream('./listings3.csv');
+const bookingStream = fs.createWriteStream('./bookings3.csv');
+const userStream = fs.createWriteStream('./users3.csv');
 
 const maxListings = 1e7;
 const minUsers = 0;
@@ -34,7 +34,7 @@ async function writer() {
       baseGuests * faker.random.number({ min: 0, max: 0.5, precision: 0.1 })
     );
     const maxGuests = baseGuests + extraGuests;
-    const lastAvailableDate = faker.date.between('2019-09-01', '2019-12-10');
+    const lastAvailableDate = faker.date.between('2019-09-01', '2019-12-05');
     const maxNights = Math.max(minNights, faker.random.number({ min: 1, max: 355 }));
     const taxes = Math.round(
       basePrice * faker.random.number({ min: 0.05, max: 0.2, precision: 0.01 }),
@@ -42,7 +42,8 @@ async function writer() {
     const serviceFee = Math.round(
       basePrice * 0.12,
     );    
-    const randUsers = Math.floor(Math.random() * (maxUsers - minUsers + 1)) + minUsers; //The maximum is inclusive and the minimum is inclusive 
+    const randUserMax = Math.floor(Math.random() * (maxUsers - minUsers + 1)) + minUsers; //The maximum is inclusive and the minimum is inclusive 
+    const randUsers = Math.floor(Math.random() * (randUserMax - minUsers + 1)) + minUsers;
     var startDate = faker.date.between('2019-07-31', lastAvailableDate);
     for(let k = 0; k < randUsers; k++){//create users that contains start and end reservation date
         userReserveCount +=1;
