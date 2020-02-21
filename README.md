@@ -5,10 +5,10 @@
 # Images
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
-![Booking Component Image 1](https://i.ibb.co/4Py0GWh/image1.png)
-![Booking Component Image 2](https://i.ibb.co/sHh2DH8/image2.png)
-![Booking Component Image 3](https://i.ibb.co/djC494k/image3.png)
-![Booking Component Image 4](https://i.ibb.co/dft1CzJ/image4.png)
+![Booking Component Image 1](https://i.ibb.co/4Py0GWh/image1.png =100x20)
+![Booking Component Image 2](https://i.ibb.co/sHh2DH8/image2.png =100x20)
+![Booking Component Image 3](https://i.ibb.co/djC494k/image3.png =100x20)
+![Booking Component Image 4](https://i.ibb.co/dft1CzJ/image4.png =100x20)
 
 # Booking Service API:
 
