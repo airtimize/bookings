@@ -3,10 +3,10 @@
 > Component to select calendar dates and number of guests for booking. It also displays prices per night and total number of reviews.
 
 # Images
-![Booking Component Image 1](https://i.ibb.co/4Py0GWh/image1.png=20x20)
-![Booking Component Image 2](https://i.ibb.co/sHh2DH8/image2.png=20x20)
-![Booking Component Image 3](https://i.ibb.co/djC494k/image3.png=20x20)
-![Booking Component Image 4](https://i.ibb.co/dft1CzJ/image4.png=20x20)
+<img src="https://i.ibb.co/4Py0GWh/image1.png" width="20" height="20">
+<img src="https://i.ibb.co/sHh2DH8/image2.png" width="20" height="20">
+<img src="https://i.ibb.co/djC494k/image3.png" width="20" height="20">
+<img src="https://i.ibb.co/dft1CzJ/image4.png" width="20" height="20">
 
 # Booking Service API:
 
