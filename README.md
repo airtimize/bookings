@@ -2,6 +2,29 @@
 
 > Component to select calendar dates and number of guests for booking. It also displays prices per night and total number of reviews.
 
+# Images
+
+![Booking Component Image 1](https://ibb.co/Wg9Rwnm)
+![Booking Component Image 2](https://ibb.co/KwYXQwT)
+![Booking Component Image 3](https://ibb.co/9cKHXHy)
+![Booking Component Image 4](https://ibb.co/XWDN0vk)
+
+# Booking Service API:
+
+| Method      | Endpoint                | Desc                                       |
+|:------------|:------------------------|:-------------------------------------------|
+| GET         | /api/:listingid/booking | READs listing data for specific listing id |
+| POST        | /api/booking            | CREATE a new, unique reservation listing   |
+| PUT         | /api/:listingid/booking | UPDATE and replace an existing listing     |
+| PATCH       | /api/:listingid/booking | UPDATE and modify an existing listing      |
+| DELETE      | /api/:listingid/booking | DELETE an existing listing                 |
+
+# GET: Req.body empty, Res contains JSON data of respective listing.
+# POST: Req.body contains the listing object to be added to the database.
+# PUT: Replaces a listing if exists. Req.body contains an object that should replace an existing object.
+# PATCH: Modifies a listing if exists. Req.body contains an object with fields that need to be updated.
+# DELETE: Deletes an existing listing. 
+
 ## Related Projects
 
   - https://github.com/bedroost/gallery
